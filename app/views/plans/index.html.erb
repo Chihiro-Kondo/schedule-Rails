@@ -7,7 +7,7 @@
   </li>
 </ul>
 
-<table>
+<table class = "planList">
   <thead>
     <tr>
       <th>ID</th>
@@ -26,7 +26,7 @@
         <td><%= plan.title %></td>
         <td><%= plan.start_day %></td>
         <td><%= plan.finish_day %></td>
-        <td><%= plan.all_day %></td>
+        <td><%= plan.all_day? ? "◯" : "" %></td>
         <td><%= plan.updated_at %></td>
       </tr>
     <% end %>
