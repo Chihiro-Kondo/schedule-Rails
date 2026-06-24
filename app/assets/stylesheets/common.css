@@ -7,7 +7,7 @@ header {
   background-color: rgb(207, 198, 162);
 }
 .notice {
-  background-color: #e09797;
+  background-color: #79a2af;
   padding: 5px;
 }
 
@@ -28,13 +28,11 @@ table {
 }
 
 .planList th {
-  
   background-color:  rgb(207, 198, 162);
-  padding: 10px 60px;
+  padding: 10px 20px;
  
 }
 .planList td {
-
   background-color: rgb(207, 198, 162);
   padding: 10px 20px;
 }
@@ -49,4 +47,3 @@ table {
   justify-content: center;
   align-items: center;
 }
-  

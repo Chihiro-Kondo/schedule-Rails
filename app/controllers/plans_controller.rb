@@ -22,9 +22,17 @@ class PlansController < ApplicationController
   end
 
   def edit
+    @plan = Plan.find(params[:id])
   end
 
   def update
+    @plan = Plan.find(params[:id])
+    if @plan.update(params.require(:plan).permit(:title, :start_day, :finish_day, :all_day, :memo))
+    flash[:notice] = "「#{@plan.id}」のスケジュールを変更しました"
+    redirect_to :plans
+    else
+      render "edit", status: :unprocessable_entity
+    end
   end
 
   def destroy
