@@ -6,6 +6,9 @@
     <p><%= link_to "＋新規作成", :new_plan %></p>
   </li>
 </ul>
+<% if flash[:notice] %>
+  <p class = "notice"><%= flash[:notice] %></p>
+<% end %>
 
 <table class = "planList">
   <thead>
@@ -20,7 +23,7 @@
   </thead>
 
   <tbody>
-    <%= @plans.each do |plan| %>
+    <% @plans.each do |plan| %>
       <tr>
         <td><%= plan.id %></td>
         <td><%= plan.title %></td>

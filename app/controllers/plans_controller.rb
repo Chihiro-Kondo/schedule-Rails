@@ -8,6 +8,13 @@ class PlansController < ApplicationController
   end
 
   def create
+    @plan = Plan.new(params.require(:plan).permit(:title, :start_day, :finish_day, :all_day, :memo))
+    if @plan.save
+      flash[:notice] = "スケジュールを新規追加しました"
+      redirect_to :plans
+    else
+      render "new", status: :unprocessable_entity
+    end
   end
 
   def show
