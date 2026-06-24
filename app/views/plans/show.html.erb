@@ -1,6 +1,7 @@
 <ul>
   <li><%= link_to "← 一覧に戻る", :plans %></li>
 </ul>
+<p><%= link_to "編集する", edit_plan_path(@plan.id) %></p>
 
 <h3><%= @plan.title %></h3>
 
