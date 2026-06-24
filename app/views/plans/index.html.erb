@@ -40,11 +40,15 @@
         <td>
           <%= link_to "削除", plan, data: {turbo_method: :delete, turbo_confirm: "本当に削除しますか？"} %>
         </td>
-
       </tr>
     <% end %>
   </tbody>
 </table>
+<div class = "counter">
+  <p>予定合計 : <%= @plans.count %> 件</p>
+  <p>本日の日付: <%= Date.today.strftime("%Y/%m/%d") %></p>
+</div>
+
 
 
     
