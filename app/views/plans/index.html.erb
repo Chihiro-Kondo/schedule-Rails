@@ -30,7 +30,11 @@
         <td><%= plan.start_day %></td>
         <td><%= plan.finish_day %></td>
         <td><%= plan.all_day? ? "◯" : "" %></td>
-        <td><%= plan.updated_at %></td>
+        <td><%= plan.updated_at.to_fs(:datetime_jp) %></td>
+        <td>
+          <%= link_to "詳細", plan %>
+        </td>
+        
       </tr>
     <% end %>
   </tbody>

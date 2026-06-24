@@ -1,0 +1,26 @@
+<ul>
+  <li><%= link_to "← 一覧に戻る", :plans %></li>
+</ul>
+
+<h3><%= @plan.title %></h3>
+
+<table>
+  <tr>
+   <th>開始日</th>
+   <td><%= @plan.start_day %></td> 
+  </tr>
+  <tr>
+   <th>終了日</th>
+   <td><%= @plan.finish_day %></td> 
+  </tr>
+  <tr>
+   <th>終日</th>
+   <td><%= @plan.all_day? ? "◯" : "" %></td>
+  </tr>
+  <tr>
+   <th>スケジュールメモ</th>
+   <td><%= @plan.memo %></td> 
+  </tr>
+</table>
+
+
