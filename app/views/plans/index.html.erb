@@ -1,11 +1,9 @@
-<ul>
-  <li>
-    <h3>予定一覧</h3>
-  </li>
-  <li>
-    <p><%= link_to "＋新規作成", :new_plan %></p>
-  </li>
-</ul>
+
+<div class = "Counter">
+  <h4>予定一覧</h4>
+  <%= link_to "＋新規作成", new_plan_path, class: "btn btn-primary btn-lg" %>
+</div>
+
 <% if flash[:notice] %>
   <p class = "notice"><%= flash[:notice] %></p>
 <% end %>
@@ -13,24 +11,24 @@
 <table class = "planList">
   <thead>
     <tr>
-      <th>ID</th>
-      <th>タイトル</th>
-      <th>開始日</th>
-      <th>終了日</th>
-      <th>終日</th>
-      <th>更新日時</th>
+      <th class = "id">ID</th>
+      <th class = "title">タイトル</th>
+      <th class = "startDay">開始日</th>
+      <th class = "finishDay">終了日</th>
+      <th class = "allDay">終日</th>
+      <th class = "upDate1">更新日時</th>
     </tr>
   </thead>
 
   <tbody>
     <% @plans.each do |plan| %>
       <tr>
-        <td><%= plan.id %></td>
-        <td><%= plan.title %></td>
-        <td><%= plan.start_day %></td>
-        <td><%= plan.finish_day %></td>
-        <td><%= plan.all_day? ? "◯" : "" %></td>
-        <td><%= plan.updated_at.to_fs(:datetime_jp) %></td>
+        <td class = "id"><%= plan.id %></td>
+        <td class = "title"><%= plan.title %></td>
+        <td class = "startDay"><%= plan.start_day.strftime("%Y/%m/%d") %></td>
+        <td class = "finishDay" ><%= plan.finish_day.strftime("%Y/%m/%d") %></td>
+        <td class = "allDay"><%= plan.all_day? ? "◯" : "" %></td>
+        <td class = "upDate2"><%= plan.updated_at.to_fs(:datetime_jp) %></td>
         <td>
           <%= link_to "詳細", plan %>
         </td>
@@ -44,7 +42,7 @@
     <% end %>
   </tbody>
 </table>
-<div class = "counter">
+<div class = "sumCounter">
   <p>予定合計 : <%= @plans.count %> 件</p>
   <p>本日の日付: <%= Date.today.strftime("%Y/%m/%d") %></p>
 </div>
