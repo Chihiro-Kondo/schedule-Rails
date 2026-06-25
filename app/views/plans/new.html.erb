@@ -1,0 +1,36 @@
+<div class = "Counter">
+  <h4>新規の予定を作成</h4>
+</div>
+<%= render "shared/error", obj: @plan %>
+
+<%= form_with model: @plan do |f| %>
+
+  <div class="TableContainer">
+    <table class = "newSchedule">
+      <tr>
+        <th><%= f.label :title, "タイトル" %></th>
+        <td><%= f.text_field :title, class: "t_form" %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :start_day ,"開始日" %></th>
+        <td><%= f.date_field :start_day, class: "sf_form" %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :finish_day ,"終了日" %></th>
+        <td><%= f.date_field :finish_day, class: "sf_form" %></td>
+      </tr>
+      <tr>
+        <th><%= f.label :memo ,"スケジュールメモ" %></th>
+        <td><%= f.text_area :memo, class: "m_form"%></td>
+      </tr>
+    </table>
+    <div class = "checkbox">
+      <%= f.check_box :all_day %>
+        終日の場合はチェックを入れます
+    </div>
+  </div>
+  <div class = "saveCounter">
+    <%= link_to "キャンセル", :plans, class: "btn btn-secondary" %>
+    <%= f.submit "保存", class: "btn btn-primary" %>
+  </div>
+<% end %>

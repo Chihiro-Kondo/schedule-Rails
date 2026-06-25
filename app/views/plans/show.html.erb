@@ -1,0 +1,30 @@
+
+
+<div class = "showCounter">
+    <%= link_to "← 一覧に戻る", :plans, class: "btn btn-secondary" %>
+    <%= link_to "編集する", edit_plan_path(@plan.id), class: "btn btn-primary" %>
+  </div>
+
+<h3>タイトル：<%= @plan.title %></h3>
+
+
+<table class= "show">
+  <tr>
+   <th>開始日</th>
+   <td><%= @plan.start_day.strftime("%Y/%m/%d")%></td> 
+  </tr>
+  <tr>
+   <th>終了日</th>
+   <td><%= @plan.finish_day.strftime("%Y/%m/%d") %></td> 
+  </tr>
+  <tr>
+   <th>終日</th>
+   <td><%= @plan.all_day? ? "◯" : "" %></td>
+  </tr>
+  <tr>
+   <th>スケジュールメモ</th>
+   <td><pre><%= @plan.memo %></pre></td> 
+  </tr>
+</table>
+
+
